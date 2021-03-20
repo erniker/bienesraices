@@ -4,6 +4,8 @@ import useInit from "../hooks/useInit"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import BackgroundImage from "gatsby-background-image"
+import * as heroCSS from "../css/hero.module.css"
+import Find from "../components/find"
 
 const ImageBackground = styled(BackgroundImage)`
   height: 600px;
@@ -15,7 +17,7 @@ const Index = () => {
   return (
     <Layout>
       <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft">
-        <div>
+        <div className={heroCSS.imagebg}>
           <h1>Venta de casas y departamentos exclusivos</h1>
         </div>
       </ImageBackground>
@@ -36,6 +38,7 @@ const Index = () => {
           </p>
         </div>
       </main>
+      <Find />
     </Layout>
   )
 }
