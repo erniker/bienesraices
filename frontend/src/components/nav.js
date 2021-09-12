@@ -35,10 +35,10 @@ const Nav = () => {
         <NavLink to={"/"} activeClassName="current-page">
           Inicio
         </NavLink>
-        <NavLink to={"/aboutus"} activeClassName="current-page">
+        <NavLink to={"/nosotros"} activeClassName="current-page">
           Sobre Nosotros
         </NavLink>
-        <NavLink to={"/immovables"} activeClassName="current-page">
+        <NavLink to={"/propiedades"} activeClassName="current-page">
           Propiedades
         </NavLink>
       </Navegation>

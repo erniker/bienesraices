@@ -2,6 +2,12 @@ const urlSlug = require("url-slug")
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     query {
+      allStrapiPaginas {
+        nodes {
+          nombre
+          id
+        }
+      }
       allStrapiPropiedades {
         nodes {
           nombre
@@ -17,7 +23,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // If there is results, generate static files
+  const pages = result.data.allStrapiPaginas.nodes
   const properties = result.data.allStrapiPropiedades.nodes
+
+  // Create pages templates
+  pages.forEach(page => {
+    actions.createPage({
+      path: urlSlug(page.nombre),
+      component: require.resolve("./src/components/pages.js"),
+      context: {
+        id: page.id,
+      },
+    })
+  })
 
   // Create properties templates
   properties.forEach(property => {

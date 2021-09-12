@@ -69,7 +69,6 @@ const Property = ({
   },
 }) => {
   const {
-    id,
     nombre,
     descripcion,
     wc,

@@ -20,9 +20,6 @@ const Find = () => {
       }
     }
   `)
-
-  console.log(image)
-
   return (
     <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <div className={heroCSS.imagebg}>

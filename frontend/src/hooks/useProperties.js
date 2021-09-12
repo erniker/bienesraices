@@ -32,7 +32,6 @@ const useProperties = () => {
     }
   `)
 
-  // console.log(data)
   return data.allStrapiPropiedades.nodes.map(property => ({
     name: property.nombre,
     description: property.description,

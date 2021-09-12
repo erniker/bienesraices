@@ -22,9 +22,8 @@ const PropertiesList = () => {
     } else {
       saveFiltered(properties)
     }
-  }, [category])
+  }, [category, properties])
 
-  console.log(properties)
   return (
     <>
       <h2
